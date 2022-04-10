@@ -15,4 +15,7 @@ public class MainPage {
     // нопка "Заказать" в шапке страницы
     @FindBy(how = How.XPATH,using = "//div/div[1]/div[2]/button[1]")
     public SelenideElement orderButtonHeader;
+
+    @FindBy(how = How.XPATH,using = "//div/div[2]/div[2]/div[1]/input")
+    public SelenideElement nameFieldInOrderForm;
 }
