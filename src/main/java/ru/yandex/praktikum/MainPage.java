@@ -61,9 +61,18 @@ public class MainPage {
     @FindBy(how = How.XPATH, using = "//div[@class='Home_RoadMap__2tal_']/div[1]/div[2]/div[@class='Home_StatusDescription__3WGl5']")
     public SelenideElement firstStepDescription;
 
-    
+    // "Как это работает", шаг 2, номер шага
+    @FindBy(how = How.XPATH, using = "//div[@class='Home_RoadMap__2tal_']/div[2]/div[@class='Home_StatusCircle__3_aTp']")
+    public SelenideElement numberOfSecondStep;
 
+    // "Как это работает", шаг 2, title
+    @FindBy(how = How.XPATH, using = "//div[@class='Home_RoadMap__2tal_']/div[2]/div[2]/div[@class='Home_Status__YkfmH']")
+    public SelenideElement secondStepTitle;
 
-    @FindBy(how = How.XPATH,using = "//div/div[2]/div[2]/div[1]/input")
-    public SelenideElement nameFieldInOrderForm;
+    // "Как это работает", шаг 2, описание
+    @FindBy(how = How.XPATH, using = "//div[@class='Home_RoadMap__2tal_']/div[2]/div[2]/div[@class='Home_StatusDescription__3WGl5']")
+    public SelenideElement secondStepDescription;
+
+    //@FindBy(how = How.XPATH,using = "//div/div[2]/div[2]/div[1]/input")
+    //public SelenideElement nameFieldInOrderForm;
 }
