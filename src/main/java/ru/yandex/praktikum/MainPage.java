@@ -101,6 +101,18 @@ public class MainPage {
     @FindBy(how = How.XPATH, using = "//div[@class='Home_RoadMap__2tal_']/div[4]/div[2]/div[2]")
     public SelenideElement fourthStepDescription;
 
+    // секция "Вопросы о важном"
+    @FindBy(how = How.XPATH, using = "//div[@class='Home_FourPart__1uthg']")
+    public SelenideElement questionsSection;
+
+    // Вопрос 1 - Сколько это стоит и как оплатить
+    @FindBy(how = How.XPATH, using = "//div[@id='accordion__heading-8']")
+    public SelenideElement questionOne;
+
+    // Ответ 1
+    @FindBy(how = How.XPATH, using = "//div[@id='accordion__panel-8']")
+    public SelenideElement answerOne;
+
     //@FindBy(how = How.XPATH,using = "//div/div[2]/div[2]/div[1]/input")
     //public SelenideElement nameFieldInOrderForm;
 }
