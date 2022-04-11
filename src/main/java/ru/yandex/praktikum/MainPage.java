@@ -24,6 +24,22 @@ public class MainPage {
     @FindBy(how = How.XPATH, using = "//div[@class='Home_FinishButton__1_cWm']/button[text()='Заказать']")
     public SelenideElement orderButtonBottom;
 
+    // title формы заказа самоката
+    @FindBy(how = How.XPATH, using = "//div[@class='Order_Header__BZXOb']")
+    public SelenideElement orderFormTitle;
+
+    // поле Имя формы заказа самоката
+    @FindBy(how = How.XPATH, using = "//input[@placeholder='* Имя']")
+    public SelenideElement orderFormFirstNameField;
+
+    // поле Фамилия формы заказа самоката
+    @FindBy(how = How.XPATH, using = "//input[@placeholder='* Фамилия']")
+    public SelenideElement orderFormLastNameField;
+
+    // поле Адрес формы заказа самоката
+    @FindBy(how = How.XPATH, using = "//input[@placeholder='* Адрес: куда привезти заказ']")
+    public SelenideElement orderFormAddressField;
+
     // кнопка "Статус заказа" в шапке страницы
     @FindBy(how = How.XPATH, using = "//div[@class='Header_Nav__AGCXC']/button[text()='Статус заказа']")
     public SelenideElement orderStatusButtonHeader;
