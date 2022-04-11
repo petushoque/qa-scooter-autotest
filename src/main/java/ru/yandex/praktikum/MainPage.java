@@ -28,6 +28,8 @@ public class MainPage {
     @FindBy(how = How.XPATH, using = "//div[@class='Header_Nav__AGCXC']/button[text()='Статус заказа']")
     public SelenideElement orderStatusButtonHeader;
 
+    
+
     // гланый title страницы, 1 строка
     @FindBy(how = How.XPATH, using = "//div[@class='Home_Header__iJKdX']/text()[1]")
     public SelenideElement titleFirstLine;
@@ -152,6 +154,22 @@ public class MainPage {
     // Ответ 6
     @FindBy(how = How.XPATH, using = "//div[@id='accordion__panel-13']")
     public SelenideElement answerSix;
+
+    // Вопрос 7 - Можно ли отменить заказ?
+    @FindBy(how = How.XPATH, using = "//div[@id='accordion__heading-14']")
+    public SelenideElement questionSeven;
+
+    // Ответ 7
+    @FindBy(how = How.XPATH, using = "//div[@id='accordion__panel-14']")
+    public SelenideElement answerSeven;
+
+    // Вопрос 8 - Можно ли отменить заказ?
+    @FindBy(how = How.XPATH, using = "//div[@id='accordion__heading-15']")
+    public SelenideElement questionEight;
+
+    // Ответ 8
+    @FindBy(how = How.XPATH, using = "//div[@id='accordion__panel-15']")
+    public SelenideElement answerEight;
 
     //@FindBy(how = How.XPATH,using = "//div/div[2]/div[2]/div[1]/input")
     //public SelenideElement nameFieldInOrderForm;
