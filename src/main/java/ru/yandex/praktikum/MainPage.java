@@ -20,6 +20,10 @@ public class MainPage {
     @FindBy(how = How.XPATH,using = "//div[@class='Header_Nav__AGCXC']/button[text()='Заказать']")
     public SelenideElement orderButtonHeader;
 
+    // кнопка "Заказать" в конце страницы
+    @FindBy(how = How.XPATH, using = "//div[@class='Home_FinishButton__1_cWm']/button[text()='Заказать']")
+    public SelenideElement orderButtonBottom;
+
     // кнопка "Статус заказа" в шапке страницы
     @FindBy(how = How.XPATH, using = "//div[@class='Header_Nav__AGCXC']/button[text()='Статус заказа']")
     public SelenideElement orderStatusButtonHeader;
@@ -84,6 +88,18 @@ public class MainPage {
     // "Как это работает", шаг 3, описание
     @FindBy(how = How.XPATH, using = "//div[@class='Home_RoadMap__2tal_']/div[3]/div[2]/div[@class='Home_StatusDescription__3WGl5']")
     public SelenideElement thirdStepDescription;
+
+    // "Как это работает", шаг 4, номер шага
+    @FindBy(how = How.XPATH, using = "//div[@class='Home_RoadMap__2tal_']/div[4]/div[1]")
+    public SelenideElement numberOfFourthStep;
+
+    // "Как это работает", шаг 4, title
+    @FindBy(how = How.XPATH, using = "//div[@class='Home_RoadMap__2tal_']/div[4]/div[2]/div[1]")
+    public SelenideElement fourthStepTitle;
+
+    // "Как это работает", шаг 4, описание
+    @FindBy(how = How.XPATH, using = "//div[@class='Home_RoadMap__2tal_']/div[4]/div[2]/div[2]")
+    public SelenideElement fourthStepDescription;
 
     //@FindBy(how = How.XPATH,using = "//div/div[2]/div[2]/div[1]/input")
     //public SelenideElement nameFieldInOrderForm;
