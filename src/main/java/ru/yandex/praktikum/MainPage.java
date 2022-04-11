@@ -105,13 +105,53 @@ public class MainPage {
     @FindBy(how = How.XPATH, using = "//div[@class='Home_FourPart__1uthg']")
     public SelenideElement questionsSection;
 
-    // Вопрос 1 - Сколько это стоит и как оплатить
+    // Вопрос 1 - Сколько это стоит и как оплатить?
     @FindBy(how = How.XPATH, using = "//div[@id='accordion__heading-8']")
     public SelenideElement questionOne;
 
     // Ответ 1
     @FindBy(how = How.XPATH, using = "//div[@id='accordion__panel-8']")
     public SelenideElement answerOne;
+
+    // Вопрос 2 - Хочу сразу несколько самокатов! Так можно?
+    @FindBy(how = How.XPATH, using = "//div[@id='accordion__heading-9']")
+    public SelenideElement questionTwo;
+
+    // Ответ 2
+    @FindBy(how = How.XPATH, using = "//div[@id='accordion__panel-9']")
+    public SelenideElement answerTwo;
+
+    // Вопрос 3 - Как рассчитывается время аренды?
+    @FindBy(how = How.XPATH, using = "//div[@id='accordion__heading-10']")
+    public SelenideElement questionThree;
+
+    // Ответ 3
+    @FindBy(how = How.XPATH, using = "//div[@id='accordion__panel-10']")
+    public SelenideElement answerThree;
+
+    // Вопрос 4 - Можно ли заказать самокат прямо на сегодня?
+    @FindBy(how = How.XPATH, using = "//div[@id='accordion__heading-11']")
+    public SelenideElement questionFour;
+
+    // Ответ 4
+    @FindBy(how = How.XPATH, using = "//div[@id='accordion__panel-11']")
+    public SelenideElement answerFour;
+
+    // Вопрос 5 - Можно ли продлить заказ или вернуть самокат раньше?
+    @FindBy(how = How.XPATH, using = "//div[@id='accordion__heading-12']")
+    public SelenideElement questionFive;
+
+    // Ответ 5
+    @FindBy(how = How.XPATH, using = "//div[@id='accordion__panel-12']")
+    public SelenideElement answerFive;
+
+    // Вопрос 6 - Вы привозите зарядку вместе с самокатом?
+    @FindBy(how = How.XPATH, using = "//div[@id='accordion__heading-13']")
+    public SelenideElement questionSix;
+
+    // Ответ 6
+    @FindBy(how = How.XPATH, using = "//div[@id='accordion__panel-13']")
+    public SelenideElement answerSix;
 
     //@FindBy(how = How.XPATH,using = "//div/div[2]/div[2]/div[1]/input")
     //public SelenideElement nameFieldInOrderForm;
