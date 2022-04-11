@@ -40,6 +40,17 @@ public class MainPage {
     @FindBy(how = How.XPATH, using = "//input[@placeholder='* Адрес: куда привезти заказ']")
     public SelenideElement orderFormAddressField;
 
+    // селектор Станция метро формы заказа самоката
+    @FindBy(how = How.XPATH, using = "//input[@placeholder='* Станция метро']")
+    public SelenideElement orderFormMetroStationField;
+
+    // поле Телефон формы заказа самоката
+    @FindBy(how = How.XPATH, using = "//input[@placeholder='* Телефон: на него позвонит курьер']")
+    public SelenideElement orderFormPhoneField;
+
+    // кнопка Дальше формы заказа самоката
+    @FindBy(how = How.XPATH, using = "")
+
     // кнопка "Статус заказа" в шапке страницы
     @FindBy(how = How.XPATH, using = "//div[@class='Header_Nav__AGCXC']/button[text()='Статус заказа']")
     public SelenideElement orderStatusButtonHeader;
