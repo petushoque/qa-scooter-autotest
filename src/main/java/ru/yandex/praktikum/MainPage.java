@@ -28,7 +28,13 @@ public class MainPage {
     @FindBy(how = How.XPATH, using = "//div[@class='Header_Nav__AGCXC']/button[text()='Статус заказа']")
     public SelenideElement orderStatusButtonHeader;
 
-    
+    // строка поиска заказа
+    @FindBy(how = How.XPATH, using = "//div[@class='Header_SearchInput__3YRIQ']/div/input")
+    public SelenideElement searchOrderField;
+
+    // кнопка начала поиска Go!
+    @FindBy(how = How.XPATH, using = "//div[@class='Header_SearchInput__3YRIQ']/button")
+    public SelenideElement searchOrderButton;
 
     // гланый title страницы, 1 строка
     @FindBy(how = How.XPATH, using = "//div[@class='Home_Header__iJKdX']/text()[1]")
