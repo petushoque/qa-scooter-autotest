@@ -48,6 +48,10 @@ public class MainPage {
     @FindBy(how = How.XPATH, using = "//input[@placeholder='* Телефон: на него позвонит курьер']")
     public SelenideElement orderFormPhoneField;
 
+    // кнопка Назад формы заказа самоката
+    @FindBy(how = How.XPATH, using = "//div[@class='Order_Buttons__1xGrp']/button[text()='Назад']")
+    public SelenideElement orderFormBackButton;
+
     // кнопка Дальше формы заказа самоката
     @FindBy(how = How.XPATH, using = "")
 
