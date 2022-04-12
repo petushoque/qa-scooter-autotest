@@ -56,6 +56,10 @@ public class MainPage {
     @FindBy(how = How.XPATH, using = "//div[@class='Order_Buttons__1xGrp']/button[text()='Заказать']")
     public SelenideElement orderFormNextButton;
 
+    // кнопка завершения оформления заказа "Заказать"
+    @FindBy(how = How.XPATH, using = "//div[@class='Order_Buttons__1xGrp']/button[text()='Заказать']")
+    public SelenideElement orderFormOrderButton;
+
     // кнопка "Статус заказа" в шапке страницы
     @FindBy(how = How.XPATH, using = "//div[@class='Header_Nav__AGCXC']/button[text()='Статус заказа']")
     public SelenideElement orderStatusButtonHeader;
