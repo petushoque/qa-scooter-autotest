@@ -4,6 +4,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 public class MainPage {
+
+    public static final String MAIN_PAGE_URL = "https://qa-scooter.praktikum-services.ru";
+
     // логотип Яндекса в шапке страницы
     @FindBy(how = How.CLASS_NAME,using = "Header_LogoYandex__3TSOI")
     public SelenideElement yandexLogo;

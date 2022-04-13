@@ -100,6 +100,10 @@ public class OrderPage {
     @FindBy(how = How.XPATH, using = "//div[@class='Order_Modal__YZ-d3']/div/button")
     private SelenideElement orderPopupCheckStatusButton;
 
+    public String getOrderNumber() {
+        return orderPopupOrderNumber.text();
+    }
+
     public void fillOrderFormStepOne(String firstName, String lastName, String address, String metroStation, String phone) {
         orderFormFirstNameField.setValue(firstName);
         orderFormLastNameField.setValue(lastName);
@@ -139,5 +143,9 @@ public class OrderPage {
         else {
             confirmOrderPopupCancelButton.click();
         }
+    }
+
+    public void goToOrderStatus() {
+        orderPopupCheckStatusButton.click();
     }
 }
