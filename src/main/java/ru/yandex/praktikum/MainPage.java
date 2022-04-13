@@ -76,6 +76,14 @@ public class MainPage {
     @FindBy(how = How.XPATH, using = "//label[@for='black']")
     public SelenideElement orderFormBlackScooterLabel;
 
+    // чекбокс серый самокат формы заказа самоката
+    @FindBy(how = How.ID, using = "grey")
+    public SelenideElement orderFormGreyScooterCheckbox;
+
+    // подпись к чекбоксу серый самокат формы заказа самоката
+    @FindBy(how = How.XPATH, using = "//label[@for='grey']")
+    public SelenideElement orderFormGreyScooterLabel;
+
     // кнопка завершения оформления заказа "Заказать"
     @FindBy(how = How.XPATH, using = "//div[@class='Order_Buttons__1xGrp']/button[text()='Заказать']")
     public SelenideElement orderFormOrderButton;
