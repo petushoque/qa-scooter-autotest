@@ -84,9 +84,29 @@ public class MainPage {
     @FindBy(how = How.XPATH, using = "//label[@for='grey']")
     public SelenideElement orderFormGreyScooterLabel;
 
+    // поле Комментарий формы заказа самоката
+    @FindBy(how = How.XPATH, using = "//input[@placeholder='Комментарий для курьера']")
+    public SelenideElement orderFormCommentField;
+
     // кнопка завершения оформления заказа "Заказать"
     @FindBy(how = How.XPATH, using = "//div[@class='Order_Buttons__1xGrp']/button[text()='Заказать']")
     public SelenideElement orderFormOrderButton;
+
+    // попап подтверждения заказа
+    @FindBy(how = How.XPATH, using = "//div[@class='Order_Modal__YZ-d3']")
+    public SelenideElement confirmOrderPopup;
+
+    // title попапа подтверждения заказа
+    @FindBy(how = How.XPATH, using = "//div[@class='Order_Modal__YZ-d3']")
+    public SelenideElement confirmOrderPopupTitle;
+
+    // кнопка Да в попапе подтверждения заказа
+    @FindBy(how = How.XPATH, using = "//button[text()='Да']")
+    public SelenideElement confirmOrderPopupConfirmButton;
+
+    // кнопка Нет в попапе подтверждения заказа
+    @FindBy(how = How.XPATH, using = "//button[text()='Нет']")
+    public SelenideElement confirmOrderPopupCancelButton;
 
     // кнопка "Статус заказа" в шапке страницы
     @FindBy(how = How.XPATH, using = "//div[@class='Header_Nav__AGCXC']/button[text()='Статус заказа']")
