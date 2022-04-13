@@ -60,6 +60,22 @@ public class MainPage {
     @FindBy(how = How.XPATH, using = "//input[@placeholder='* Когда привезти самокат']")
     public SelenideElement orderFormStartDateField;
 
+    // поле Продолжительность аренды формы заказа самоката
+    @FindBy(how = How.CLASS_NAME, using = "Dropdown-control")
+    public SelenideElement orderFormDurationField;
+
+    // title цветов самоката формы заказа самоката
+    @FindBy(how = How.XPATH, using = "//div[@class='Order_Title__3EKne']")
+    public SelenideElement orderFormScooterColorTitle;
+
+    // чекбокс черный самокат формы заказа самоката
+    @FindBy(how = How.ID, using = "black")
+    public SelenideElement orderFormBlackScooterCheckbox;
+
+    // подпись к чекбоксу черный самокат формы заказа самоката
+    @FindBy(how = How.XPATH, using = "//label[@for='black']")
+    public SelenideElement orderFormBlackScooterLabel;
+
     // кнопка завершения оформления заказа "Заказать"
     @FindBy(how = How.XPATH, using = "//div[@class='Order_Buttons__1xGrp']/button[text()='Заказать']")
     public SelenideElement orderFormOrderButton;
