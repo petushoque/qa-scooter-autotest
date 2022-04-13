@@ -73,7 +73,10 @@ public class OrderPage {
     @FindBy(how = How.XPATH, using = "//div[@class='Order_Buttons__1xGrp']/button[text()='Заказать']")
     private SelenideElement orderFormOrderButton;
 
-    public void fillOrderFormStepOne(String firstName, String lastName) {
-        
+    public void fillOrderFormStepOne(String firstName, String lastName, String address, String metroStation) {
+        orderFormFirstNameField.setValue(firstName);
+        orderFormLastNameField.setValue(lastName);
+        orderFormAddressField.setValue(address);
+        orderFormMetroStationField.setValue(metroStation);
     }
 }
