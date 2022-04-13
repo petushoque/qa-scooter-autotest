@@ -271,4 +271,8 @@ public class MainPage {
 
     //@FindBy(how = How.XPATH,using = "//div/div[2]/div[2]/div[1]/input")
     //public SelenideElement nameFieldInOrderForm;
+
+    public void clickOnOrderButtonInHeader() {
+        orderButtonHeader.click();
+    }
 }
