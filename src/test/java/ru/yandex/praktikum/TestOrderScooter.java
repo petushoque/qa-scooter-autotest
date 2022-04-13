@@ -10,7 +10,9 @@ public class TestOrderScooter {
         MainPage mainPage = open("https://qa-scooter.praktikum-services.ru/", MainPage.class);
         mainPage.clickOnOrderButtonInHeader();
         OrderPage orderPage = page(OrderPage.class);
-        orderPage.fillOrderFormStepOne("Hermann", "Hesse", "Красная площадь, 1", "ВДНХ");
+        orderPage.fillOrderFormStepOne("Герман", "Гессе", "Красная площадь, 1",
+                "ВДНХ", "88005553535");
+        orderPage.goToNextStep();
         String pngFileName = screenshot("my_file_name");
     }
 }

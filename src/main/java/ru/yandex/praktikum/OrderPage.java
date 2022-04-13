@@ -1,7 +1,10 @@
 package ru.yandex.praktikum;
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+
+import static com.codeborne.selenide.Selenide.$;
 
 public class OrderPage {
 
@@ -34,7 +37,7 @@ public class OrderPage {
     private SelenideElement orderFormBackButton;
 
     // кнопка Дальше формы заказа самоката
-    @FindBy(how = How.XPATH, using = "//div[@class='Order_Buttons__1xGrp']/button[text()='Далее']")
+    @FindBy(how = How.XPATH, using = "//div[@class='Order_NextButton__1_rCA']/button")
     private SelenideElement orderFormNextButton;
 
     // поле Дата начала аренды формы заказа самоката
@@ -73,10 +76,17 @@ public class OrderPage {
     @FindBy(how = How.XPATH, using = "//div[@class='Order_Buttons__1xGrp']/button[text()='Заказать']")
     private SelenideElement orderFormOrderButton;
 
-    public void fillOrderFormStepOne(String firstName, String lastName, String address, String metroStation) {
+    public void fillOrderFormStepOne(String firstName, String lastName, String address, String metroStation, String phone) {
         orderFormFirstNameField.setValue(firstName);
         orderFormLastNameField.setValue(lastName);
         orderFormAddressField.setValue(address);
         orderFormMetroStationField.setValue(metroStation);
+        orderFormMetroStationField.click();
+        $(By.xpath(String.format("//div[text()='%s']", metroStation))).scrollIntoView(true).click();
+        orderFormPhoneField.setValue(phone);
+    }
+
+    public void goToNextStep() {
+        orderFormNextButton.click();
     }
 }
