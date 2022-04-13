@@ -76,6 +76,30 @@ public class OrderPage {
     @FindBy(how = How.XPATH, using = "//div[@class='Order_Buttons__1xGrp']/button[text()='Заказать']")
     private SelenideElement orderFormOrderButton;
 
+    // попап подтверждения заказа / попап с информацией о созданном заказе
+    @FindBy(how = How.XPATH, using = "//div[@class='Order_Modal__YZ-d3']")
+    private SelenideElement orderPopup;
+
+    // title попапа подтверждения заказа / попапа с информацией о созданном заказе
+    @FindBy(how = How.XPATH, using = "//div[@class='Order_ModalHeader__3FDaJ']")
+    private SelenideElement orderPopupTitle;
+
+    // номер заказа в попапе с информацией о заказе
+    @FindBy(how = How.XPATH, using = "//div[@class='Order_Text__2broi']/text()[2]")
+    private SelenideElement orderPopupOrderNumber;
+
+    // кнопка Да в попапе подтверждения заказа
+    @FindBy(how = How.XPATH, using = "//button[text()='Да']")
+    private SelenideElement confirmOrderPopupConfirmButton;
+
+    // кнопка Нет в попапе подтверждения заказа
+    @FindBy(how = How.XPATH, using = "//button[text()='Нет']")
+    private SelenideElement confirmOrderPopupCancelButton;
+
+    // кнопка проверить статус заказа в попапе с информацией о заказе
+    @FindBy(how = How.XPATH, using = "//div[@class='Order_Modal__YZ-d3']/div/button")
+    private SelenideElement orderPopupCheckStatusButton;
+
     public void fillOrderFormStepOne(String firstName, String lastName, String address, String metroStation, String phone) {
         orderFormFirstNameField.setValue(firstName);
         orderFormLastNameField.setValue(lastName);
@@ -102,5 +126,18 @@ public class OrderPage {
             orderFormGreyScooterCheckbox.click();
         }
         orderFormCommentField.setValue(comment);
+    }
+
+    public void submitOrderForm() {
+        orderFormOrderButton.click();
+    }
+
+    public void confirmOrderPopup(boolean isConfirm) {
+        if (isConfirm) {
+            confirmOrderPopupConfirmButton.click();
+        }
+        else {
+            confirmOrderPopupCancelButton.click();
+        }
     }
 }

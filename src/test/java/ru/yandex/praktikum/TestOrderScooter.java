@@ -17,6 +17,8 @@ public class TestOrderScooter {
         orderPage.goToNextStep();
         orderPage.fillOrderFormStepTwo("12.12.1212", "сутки", true, false,
                 "Wow, it is automation test");
+        orderPage.submitOrderForm();
+        orderPage.confirmOrderPopup(true);
         String pngFileName = screenshot("my_file_name");
     }
 }

@@ -24,30 +24,6 @@ public class MainPage {
     @FindBy(how = How.XPATH, using = "//div[@class='Home_FinishButton__1_cWm']/button[text()='Заказать']")
     public SelenideElement orderButtonBottom;
 
-    // попап подтверждения заказа / попап с информацией о созданном заказе
-    @FindBy(how = How.XPATH, using = "//div[@class='Order_Modal__YZ-d3']")
-    public SelenideElement orderPopup;
-
-    // title попапа подтверждения заказа / попапа с информацией о созданном заказе
-    @FindBy(how = How.XPATH, using = "//div[@class='Order_ModalHeader__3FDaJ']")
-    public SelenideElement orderPopupTitle;
-
-    // номер заказа в попапе с информацией о заказе
-    @FindBy(how = How.XPATH, using = "//div[@class='Order_Text__2broi']/text()[2]")
-    public SelenideElement orderPopupOrderNumber;
-
-    // кнопка Да в попапе подтверждения заказа
-    @FindBy(how = How.XPATH, using = "//button[text()='Да']")
-    public SelenideElement confirmOrderPopupConfirmButton;
-
-    // кнопка Нет в попапе подтверждения заказа
-    @FindBy(how = How.XPATH, using = "//button[text()='Нет']")
-    public SelenideElement confirmOrderPopupCancelButton;
-
-    // кнопка проверить статус заказа в попапе с информацией о заказе
-    @FindBy(how = How.XPATH, using = "//div[@class='Order_Modal__YZ-d3']/div/button")
-    public SelenideElement orderPopupCheckStatusButton;
-
     // кнопка "Статус заказа" в шапке страницы
     @FindBy(how = How.XPATH, using = "//div[@class='Header_Nav__AGCXC']/button[text()='Статус заказа']")
     public SelenideElement orderStatusButtonHeader;
