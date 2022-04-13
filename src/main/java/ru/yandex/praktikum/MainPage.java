@@ -24,74 +24,6 @@ public class MainPage {
     @FindBy(how = How.XPATH, using = "//div[@class='Home_FinishButton__1_cWm']/button[text()='Заказать']")
     public SelenideElement orderButtonBottom;
 
-    // title формы заказа самоката
-    @FindBy(how = How.XPATH, using = "//div[@class='Order_Header__BZXOb']")
-    public SelenideElement orderFormTitle;
-
-    // поле Имя формы заказа самоката
-    @FindBy(how = How.XPATH, using = "//input[@placeholder='* Имя']")
-    public SelenideElement orderFormFirstNameField;
-
-    // поле Фамилия формы заказа самоката
-    @FindBy(how = How.XPATH, using = "//input[@placeholder='* Фамилия']")
-    public SelenideElement orderFormLastNameField;
-
-    // поле Адрес формы заказа самоката
-    @FindBy(how = How.XPATH, using = "//input[@placeholder='* Адрес: куда привезти заказ']")
-    public SelenideElement orderFormAddressField;
-
-    // селектор Станция метро формы заказа самоката
-    @FindBy(how = How.XPATH, using = "//input[@placeholder='* Станция метро']")
-    public SelenideElement orderFormMetroStationField;
-
-    // поле Телефон формы заказа самоката
-    @FindBy(how = How.XPATH, using = "//input[@placeholder='* Телефон: на него позвонит курьер']")
-    public SelenideElement orderFormPhoneField;
-
-    // кнопка Назад формы заказа самоката
-    @FindBy(how = How.XPATH, using = "//div[@class='Order_Buttons__1xGrp']/button[text()='Назад']")
-    public SelenideElement orderFormBackButton;
-
-    // кнопка Дальше формы заказа самоката
-    @FindBy(how = How.XPATH, using = "//div[@class='Order_Buttons__1xGrp']/button[text()='Далее']")
-    public SelenideElement orderFormNextButton;
-
-    // поле Дата начала аренды формы заказа самоката
-    @FindBy(how = How.XPATH, using = "//input[@placeholder='* Когда привезти самокат']")
-    public SelenideElement orderFormStartDateField;
-
-    // поле Продолжительность аренды формы заказа самоката
-    @FindBy(how = How.CLASS_NAME, using = "Dropdown-control")
-    public SelenideElement orderFormDurationField;
-
-    // title цветов самоката формы заказа самоката
-    @FindBy(how = How.XPATH, using = "//div[@class='Order_Title__3EKne']")
-    public SelenideElement orderFormScooterColorTitle;
-
-    // чекбокс черный самокат формы заказа самоката
-    @FindBy(how = How.ID, using = "black")
-    public SelenideElement orderFormBlackScooterCheckbox;
-
-    // подпись к чекбоксу черный самокат формы заказа самоката
-    @FindBy(how = How.XPATH, using = "//label[@for='black']")
-    public SelenideElement orderFormBlackScooterLabel;
-
-    // чекбокс серый самокат формы заказа самоката
-    @FindBy(how = How.ID, using = "grey")
-    public SelenideElement orderFormGreyScooterCheckbox;
-
-    // подпись к чекбоксу серый самокат формы заказа самоката
-    @FindBy(how = How.XPATH, using = "//label[@for='grey']")
-    public SelenideElement orderFormGreyScooterLabel;
-
-    // поле Комментарий формы заказа самоката
-    @FindBy(how = How.XPATH, using = "//input[@placeholder='Комментарий для курьера']")
-    public SelenideElement orderFormCommentField;
-
-    // кнопка завершения оформления заказа "Заказать"
-    @FindBy(how = How.XPATH, using = "//div[@class='Order_Buttons__1xGrp']/button[text()='Заказать']")
-    public SelenideElement orderFormOrderButton;
-
     // попап подтверждения заказа / попап с информацией о созданном заказе
     @FindBy(how = How.XPATH, using = "//div[@class='Order_Modal__YZ-d3']")
     public SelenideElement orderPopup;
@@ -275,4 +207,5 @@ public class MainPage {
     public void clickOnOrderButtonInHeader() {
         orderButtonHeader.click();
     }
+
 }
