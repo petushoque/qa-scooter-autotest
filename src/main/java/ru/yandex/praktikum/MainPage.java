@@ -108,9 +108,13 @@ public class MainPage {
     @FindBy(how = How.XPATH, using = "//button[text()='Да']")
     public SelenideElement confirmOrderPopupConfirmButton;
 
-    // кнопка Нет в попапе подтверждения заказаz
+    // кнопка Нет в попапе подтверждения заказа
     @FindBy(how = How.XPATH, using = "//button[text()='Нет']")
     public SelenideElement confirmOrderPopupCancelButton;
+
+    // кнопка проверить статус заказа в попапе с информацией о заказе
+    @FindBy(how = How.XPATH, using = "//div[@class='Order_Modal__YZ-d3']/div/button")
+    public SelenideElement orderPopupCheckStatusButton;
 
     // кнопка "Статус заказа" в шапке страницы
     @FindBy(how = How.XPATH, using = "//div[@class='Header_Nav__AGCXC']/button[text()='Статус заказа']")
