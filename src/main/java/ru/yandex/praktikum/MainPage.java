@@ -1,4 +1,5 @@
 package ru.yandex.praktikum;
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -182,6 +183,9 @@ public class MainPage {
 
     //@FindBy(how = How.XPATH,using = "//div/div[2]/div[2]/div[1]/input")
     //public SelenideElement nameFieldInOrderForm;
+
+    @FindBy(how = How.XPATH, using = "//div[@data-accordion-component='Accordion']")
+    public ElementsCollection questionsAccordion;
 
     public void clickOnOrderButtonInHeader() {
         orderButtonHeader.click();
