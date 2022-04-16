@@ -2,19 +2,16 @@ package ru.yandex.praktikum;
 import org.junit.Assert;
 import org.junit.Test;
 import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.screenshot;
+
 
 public class TestQuestionsAccordion {
 
     @Test
-    public void shouldQuestionsCorrespondToAnswers() {
+    public void shouldQuestionsWillBeCorrect() {
         MainPage mainPage = open(MainPage.MAIN_PAGE_URL, MainPage.class);
-
-        for(int i = 0; i < 8; i++){
+        for(int i = 0; i < mainPage.ANSWERS.length; i++){
             mainPage.clickOnQuestion(i);
             Assert.assertEquals(mainPage.getAnswerText(i), mainPage.ANSWERS[i]);
         }
-
-        String pngFileName = screenshot("my_file_name");
     }
 }
