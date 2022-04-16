@@ -184,8 +184,11 @@ public class MainPage {
     //@FindBy(how = How.XPATH,using = "//div/div[2]/div[2]/div[1]/input")
     //public SelenideElement nameFieldInOrderForm;
 
-    @FindBy(how = How.XPATH, using = "//div[@data-accordion-component='AccordionItem']")
+    @FindBy(how = How.XPATH, using = "//div[@data-accordion-component='AccordionItemHeading']")
     public ElementsCollection questionsAccordion;
+
+    @FindBy(how = How.XPATH, using = "//div[@data-accordion-component='AccordionItemPanel']")
+    public ElementsCollection answersAccordion;
 
     public void clickOnOrderButtonInHeader() {
         orderButtonHeader.click();
@@ -193,6 +196,10 @@ public class MainPage {
 
     public void clickOnQuestion(int questionNumber) {
         questionsAccordion.get(questionNumber).scrollIntoView(true).click();
+    }
+
+    public String getAnswerText(int answerNumber) {
+        return answersAccordion.get(answerNumber).text();
     }
 
 }
