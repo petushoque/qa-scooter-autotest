@@ -1,5 +1,7 @@
 package ru.yandex.praktikum;
 import org.junit.Test;
+import ru.yandex.praktikum.model.Customer;
+
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.screenshot;
@@ -17,12 +19,20 @@ public class TestOrderScooter {
     private static final boolean GREY_SCOOTER = false;
     private static final String COMMENT = "Wow, it is automation test";
 
+    Customer firstCustomer = new Customer(
+            "Герман",
+            "Гессе",
+            "Красная площадь, 1",
+            "ВДНХ",
+            "88005553535");
+
     @Test
     public void shouldSeePageWithOrderInformation() {
         MainPage mainPage = open(MainPage.MAIN_PAGE_URL, MainPage.class);
         mainPage.clickOnOrderButtonInHeader();
         OrderPage orderPage = page(OrderPage.class);
-        orderPage.fillOrderFormStepOne(FIRST_NAME, LAST_NAME, ADDRESS,METRO_STATION, PHONE_NUMBER);
+        //orderPage.fillOrderFormStepOne(FIRST_NAME, LAST_NAME, ADDRESS,METRO_STATION, PHONE_NUMBER);
+        orderPage.fillOrderFormStepOne(firstCustomer.firstName, firstCustomer.lastName, firstCustomer.orderAddress, firstCustomer.metroStation, firstCustomer.phoneNumber);
         orderPage.goToNextStep();
         orderPage.fillOrderFormStepTwo(START_DATE, DURATION, BLACK_SCOOTER, GREY_SCOOTER, COMMENT);
         orderPage.submitOrderForm();
