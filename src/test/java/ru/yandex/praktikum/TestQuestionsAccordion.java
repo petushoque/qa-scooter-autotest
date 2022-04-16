@@ -12,5 +12,7 @@ public class TestQuestionsAccordion {
     public void shouldQuestionsCorrespondToAnswers() {
         MainPage mainPage = open(MainPage.MAIN_PAGE_URL, MainPage.class);
         mainPage.questionsAccordion.get(1).scrollIntoView(true).click();
+
+        String pngFileName = screenshot("my_file_name");
     }
 }
