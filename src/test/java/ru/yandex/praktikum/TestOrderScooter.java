@@ -36,9 +36,7 @@ public class TestOrderScooter {
         orderPage.fillOrderFormStepTwo(firstOrder.startDate, firstOrder.duration, firstOrder.isScooterBlack, firstOrder.isScooterGrey, firstOrder.comment);
         orderPage.submitOrderForm();
         orderPage.confirmOrderPopup(true);
-
-
-
-        String pngFileName = screenshot("my_file_name");
+        orderPage.goToOrderStatus();
+        
     }
 }
