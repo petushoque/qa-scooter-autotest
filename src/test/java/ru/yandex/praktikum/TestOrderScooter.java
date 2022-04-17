@@ -18,12 +18,28 @@ public class TestOrderScooter {
             "88005553535"
     );
 
+    Customer secondCustomer = new Customer(
+            "Лев",
+            "Толстой",
+            "Ленина, 111",
+            "Сокольники",
+            "88888888888"
+    );
+
     OrderDetails firstOrder = new OrderDetails(
             "12.12.1212",
             "сутки",
             true,
             false,
             "Wow, it is automation test"
+    );
+
+    OrderDetails secondOrder = new OrderDetails(
+            "24.03.2022",
+            "двое суток",
+            false,
+            true,
+            "Comment"
     );
 
     // From header Order button
@@ -45,11 +61,11 @@ public class TestOrderScooter {
     @Test
     public void shouldSeePopupWithOrderInformationFromBottom() {
         MainPage mainPage = open(MainPage.MAIN_PAGE_URL, MainPage.class);
-        mainPage.clickOnOrderButtonInHeader();
+        mainPage.clickOnOrderButtonInBottom();
         OrderPage orderPage = page(OrderPage.class);
-        orderPage.fillOrderFormStepOne(firstCustomer.firstName, firstCustomer.lastName, firstCustomer.orderAddress, firstCustomer.metroStation, firstCustomer.phoneNumber);
+        orderPage.fillOrderFormStepOne(secondCustomer.firstName, secondCustomer.lastName, secondCustomer.orderAddress, secondCustomer.metroStation, secondCustomer.phoneNumber);
         orderPage.goToNextStep();
-        orderPage.fillOrderFormStepTwo(firstOrder.startDate, firstOrder.duration, firstOrder.isScooterBlack, firstOrder.isScooterGrey, firstOrder.comment);
+        orderPage.fillOrderFormStepTwo(secondOrder.startDate, secondOrder.duration, secondOrder.isScooterBlack, secondOrder.isScooterGrey, secondOrder.comment);
         orderPage.submitOrderForm();
         orderPage.confirmOrderPopup(true);
         orderPage.goToOrderStatus();
