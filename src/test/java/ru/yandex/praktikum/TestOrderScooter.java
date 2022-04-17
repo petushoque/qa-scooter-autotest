@@ -1,4 +1,5 @@
 package ru.yandex.praktikum;
+import org.junit.Assert;
 import org.junit.Test;
 import ru.yandex.praktikum.model.Customer;
 import ru.yandex.praktikum.model.OrderDetails;
@@ -26,7 +27,7 @@ public class TestOrderScooter {
     );
 
     @Test
-    public void shouldSeePageWithOrderInformation() {
+    public void shouldSeePopupWithOrderInformation() {
         MainPage mainPage = open(MainPage.MAIN_PAGE_URL, MainPage.class);
         mainPage.clickOnOrderButtonInHeader();
         OrderPage orderPage = page(OrderPage.class);
@@ -36,9 +37,7 @@ public class TestOrderScooter {
         orderPage.submitOrderForm();
         orderPage.confirmOrderPopup(true);
 
-        String orderNumber = orderPage.getOrderNumber();
 
-        orderPage.goToOrderStatus();
 
         String pngFileName = screenshot("my_file_name");
     }
