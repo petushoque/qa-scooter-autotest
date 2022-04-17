@@ -198,6 +198,10 @@ public class MainPage {
         orderButtonHeader.click();
     }
 
+    public void clickOnOrderButtonInBottom() {
+        orderButtonBottom.scrollIntoView(true).click();
+    }
+
     public void clickOnQuestion(int questionNumber) {
         questionsAccordion.get(questionNumber).scrollIntoView(true).click();
     }

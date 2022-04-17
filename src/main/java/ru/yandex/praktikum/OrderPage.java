@@ -148,4 +148,8 @@ public class OrderPage {
     public void goToOrderStatus() {
         orderPopupCheckStatusButton.click();
     }
+
+    public String getPopupTitleText() {
+        return orderPopupTitle.text();
+    }
 }

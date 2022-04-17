@@ -26,8 +26,9 @@ public class TestOrderScooter {
             "Wow, it is automation test"
     );
 
+    // From header Order button
     @Test
-    public void shouldSeePopupWithOrderInformation() {
+    public void shouldSeePopupWithOrderInformationFromHeader() {
         MainPage mainPage = open(MainPage.MAIN_PAGE_URL, MainPage.class);
         mainPage.clickOnOrderButtonInHeader();
         OrderPage orderPage = page(OrderPage.class);
@@ -37,6 +38,21 @@ public class TestOrderScooter {
         orderPage.submitOrderForm();
         orderPage.confirmOrderPopup(true);
         orderPage.goToOrderStatus();
-        
+        Assert.assertEquals("Заказ оформлен", orderPage.getPopupTitleText());
+    }
+
+    // From header Order button
+    @Test
+    public void shouldSeePopupWithOrderInformationFromBottom() {
+        MainPage mainPage = open(MainPage.MAIN_PAGE_URL, MainPage.class);
+        mainPage.clickOnOrderButtonInHeader();
+        OrderPage orderPage = page(OrderPage.class);
+        orderPage.fillOrderFormStepOne(firstCustomer.firstName, firstCustomer.lastName, firstCustomer.orderAddress, firstCustomer.metroStation, firstCustomer.phoneNumber);
+        orderPage.goToNextStep();
+        orderPage.fillOrderFormStepTwo(firstOrder.startDate, firstOrder.duration, firstOrder.isScooterBlack, firstOrder.isScooterGrey, firstOrder.comment);
+        orderPage.submitOrderForm();
+        orderPage.confirmOrderPopup(true);
+        orderPage.goToOrderStatus();
+        Assert.assertEquals("Заказ оформлен", orderPage.getPopupTitleText());
     }
 }
