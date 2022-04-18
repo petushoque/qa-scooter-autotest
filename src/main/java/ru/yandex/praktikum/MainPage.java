@@ -1,4 +1,5 @@
 package ru.yandex.praktikum;
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
@@ -207,6 +208,7 @@ public class MainPage {
     }
 
     public String getAnswerText(int answerNumber) {
+        answersAccordion.get(answerNumber).shouldBe(Condition.visible);
         return answersAccordion.get(answerNumber).text();
     }
 
