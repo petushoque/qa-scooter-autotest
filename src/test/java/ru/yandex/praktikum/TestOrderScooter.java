@@ -1,4 +1,6 @@
 package ru.yandex.praktikum;
+import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.WebDriverRunner;
 import org.junit.Assert;
 import org.junit.Test;
 import ru.yandex.praktikum.model.Customer;
@@ -60,6 +62,7 @@ public class TestOrderScooter {
     // From header Order button
     @Test
     public void shouldSeePopupWithOrderInformationFromBottom() {
+        Configuration.browser = "firefox";
         MainPage mainPage = open(MainPage.MAIN_PAGE_URL, MainPage.class);
         mainPage.clickOnOrderButtonInBottom();
         OrderPage orderPage = page(OrderPage.class);
