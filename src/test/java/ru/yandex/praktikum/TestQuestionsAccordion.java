@@ -20,12 +20,17 @@ public class TestQuestionsAccordion {
 
     }
 
-    @Before
     MainPage mainPage = open(MainPage.MAIN_PAGE_URL, MainPage.class);
 
     @Test
     public void shouldQuestionOneWillBeCorrect() {
         mainPage.clickOnQuestion(0);
         Assert.assertEquals(mainPage.getAnswerText(0), mainPage.ANSWERS[0]);
+    }
+
+    @Test
+    public void shouldQuestionTwoWillBeCorrect() {
+        mainPage.clickOnQuestion(1);
+        Assert.assertEquals(mainPage.getAnswerText(1), mainPage.ANSWERS[1]);
     }
 }
