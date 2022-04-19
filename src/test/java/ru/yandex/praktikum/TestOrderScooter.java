@@ -1,6 +1,7 @@
 package ru.yandex.praktikum;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
+import org.hamcrest.MatcherAssert;
 import org.junit.Assert;
 import org.junit.Test;
 import ru.yandex.praktikum.model.Customer;
@@ -9,6 +10,7 @@ import ru.yandex.praktikum.model.OrderDetails;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.screenshot;
+import static org.hamcrest.CoreMatchers.containsString;
 
 public class TestOrderScooter {
 
@@ -44,7 +46,7 @@ public class TestOrderScooter {
             "Comment"
     );
 
-    // From header Order button
+    // From header Order button with Chrome driver
     @Test
     public void shouldSeePopupWithOrderInformationFromHeader() {
         MainPage mainPage = open(MainPage.MAIN_PAGE_URL, MainPage.class);
@@ -56,10 +58,10 @@ public class TestOrderScooter {
         orderPage.submitOrderForm();
         orderPage.confirmOrderPopup(true);
         orderPage.goToOrderStatus();
-        Assert.assertEquals("Заказ оформлен", orderPage.getPopupTitleText());
+        MatcherAssert.assertThat(orderPage.getPopupTitleText(), containsString("Заказ оформлен"));
     }
 
-    // From header Order button
+    // From header Order button with Firefox
     @Test
     public void shouldSeePopupWithOrderInformationFromBottom() {
         Configuration.browser = "firefox";
@@ -71,7 +73,7 @@ public class TestOrderScooter {
         orderPage.fillOrderFormStepTwo(secondOrder.startDate, secondOrder.duration, secondOrder.isScooterBlack, secondOrder.isScooterGrey, secondOrder.comment);
         orderPage.submitOrderForm();
         orderPage.confirmOrderPopup(true);
-        orderPage.goToOrderStatus();
-        Assert.assertEquals("Заказ оформлен", orderPage.getPopupTitleText());
+        System.out.println(orderPage.getPopupTitleText());
+        MatcherAssert.assertThat(orderPage.getPopupTitleText(), containsString("Заказ оформлен"));
     }
 }
