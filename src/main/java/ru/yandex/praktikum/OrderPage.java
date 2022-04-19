@@ -108,7 +108,6 @@ public class OrderPage {
         orderFormFirstNameField.setValue(firstName);
         orderFormLastNameField.setValue(lastName);
         orderFormAddressField.setValue(address);
-        //orderFormMetroStationField.setValue(metroStation);
         orderFormMetroStationField.click();
         $(By.xpath(String.format("//div[text()='%s']", metroStation))).scrollIntoView(true).click();
         orderFormPhoneField.setValue(phone);
@@ -118,15 +117,15 @@ public class OrderPage {
         orderFormNextButton.click();
     }
 
-    public void fillOrderFormStepTwo(String startDate, String duration, boolean black, boolean grey, String comment) {
+    public void fillOrderFormStepTwo(String startDate, String duration, boolean isBlack, boolean isGrey, String comment) {
         orderFormStartDateField.setValue(startDate);
         orderFormTitle.click();
         orderFormDurationField.click();
         $(By.xpath(String.format("//div[@class='Dropdown-menu']/div[text()='%s']", duration))).scrollIntoView(true).click();
-        if (black) {
+        if (isBlack) {
             orderFormBlackScooterCheckbox.click();
         }
-        if (grey) {
+        if (isGrey) {
             orderFormGreyScooterCheckbox.click();
         }
         orderFormCommentField.setValue(comment);
